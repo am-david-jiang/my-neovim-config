@@ -20,3 +20,7 @@ configs.setup {
     enable = true,
   },
 }
+
+if vim.loop.os_uname().sysname == "Windows_NT" then
+  require('nvim-treesitter.install').compilers = { "clang", "cl", }
+end

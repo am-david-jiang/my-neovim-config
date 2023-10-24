@@ -96,13 +96,13 @@ require("lazy").setup({
   {
      "folke/trouble.nvim",
      dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {
-
-    }
   },
 
   -- Toggleterm
   {
     'akinsho/toggleterm.nvim', version = "*", config = true,
   },
+
+  -- Indent Guides
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", },
 }, {})
