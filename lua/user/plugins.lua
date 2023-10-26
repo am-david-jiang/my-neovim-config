@@ -105,4 +105,9 @@ require("lazy").setup({
 
   -- Indent Guides
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", },
+
+  -- Project.nvim
+  {
+    "ahmedkhalf/project.nvim",
+  },
 }, {})
