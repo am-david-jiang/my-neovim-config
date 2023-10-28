@@ -23,6 +23,7 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<leader>n", ":bnext<CR>", opts)
 keymap("n", "<leader>p", ":bprevious<CR>", opts)
+keymap("n", "<leader>c", ":bdelete<CR>", opts)
 
 -- Visual --
 -- Stay in indent mode
