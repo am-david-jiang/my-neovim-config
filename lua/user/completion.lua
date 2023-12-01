@@ -91,6 +91,7 @@ cmp.setup {
     { name = 'luasnip' },
     { name = 'buffer' },
     { name = 'path' },
+    { name = 'emmet_vim' },
   }),
   window = {
     completion = cmp.config.window.bordered(),

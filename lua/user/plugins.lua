@@ -26,6 +26,12 @@ require("lazy").setup({
 	"hrsh7th/cmp-cmdline",
 	"hrsh7th/cmp-nvim-lsp", -- Adds LSP completion capabilities
 	"hrsh7th/cmp-nvim-lua",
+  {
+    'dcampos/cmp-emmet-vim',
+    dependencies = {
+      'mattn/emmet-vim',
+    },
+  },
 
 	-- Null-ls
 	"jose-elias-alvarez/null-ls.nvim",
