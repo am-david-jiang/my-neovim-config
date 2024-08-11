@@ -4,9 +4,10 @@ local options = {
 	writebackup = false,
 
 	clipboard = "unnamedplus",
-	cmdheight = 2,
+	cmdheight = 1,
 	showmode = false,
 	pumheight = 10,
+  pumblend = 10,
 	completeopt = { "menuone", "noselect" },
 	fileencoding = "utf-8",
 	conceallevel = 0,
@@ -25,7 +26,7 @@ local options = {
 	splitbelow = true,
 	splitright = true,
 
-	timeoutlen = 300,
+	timeoutlen = 1000,
 	updatetime = 300,
 
 	cursorline = true,
