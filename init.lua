@@ -44,6 +44,8 @@ spec "plugins.gitsigns"
 spec "plugins.neogit"
 -- Trouble.nvim
 spec "plugins.trouble"
+-- Dashboard Screen
+spec "plugins.alpha"
 
 -- Apply all plugins spec via lazy.nvim
 require "lazy_manager"
