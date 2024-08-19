@@ -7,17 +7,6 @@ local M = {
 }
 
 function M.config()
-  local servers = {
-    "lua_ls",
-    "cssls",
-    "html",
-    "tsserver",
-    "pyright",
-    "bashls",
-    "jsonls",
-    "cmake_language_server",
-  }
-
   local tools = {
     "prettierd", -- prettierd formatter
     "stylua", -- lua formatter
@@ -28,7 +17,6 @@ function M.config()
   }
 
   require("mason").setup {
-    ensure_installed = servers,
     ui = {
       border = "rounded",
       icons = {
