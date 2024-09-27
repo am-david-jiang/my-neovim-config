@@ -1,51 +1,53 @@
-require "launch"
-require "options"
-require "keymap"
+require("launch")
+require("options")
+require("keymap")
 
 -- Colorscheme
-spec "colorscheme"
+spec("colorscheme")
 -- Devicons
-spec "plugins.devicons"
+spec("plugins.devicons")
 -- Which-Key integration
-spec "plugins.whichkey"
+spec("plugins.whichkey")
 -- Nvim Tree
-spec "plugins.nvimtree"
+spec("plugins.nvimtree")
 -- Programming
 -- - Treesitter
-spec "plugins.treesitter"
+spec("plugins.treesitter")
 -- - Nvim-cmp configuration
-spec "plugins.cmp"
+spec("plugins.cmp")
 -- - LSP configuration
-spec "plugins.mason"
-spec "plugins.schemastore"
-spec "plugins.lspconfig"
-spec "plugins.illuminate"
+spec("plugins.mason")
+spec("plugins.schemastore")
+spec("plugins.lspconfig")
+spec("plugins.illuminate")
 -- Formatting
-spec "plugins.conform"
+spec("plugins.conform")
 -- Linting
-spec "plugins.nvimlint"
+spec("plugins.nvimlint")
 -- Lualine
-spec "plugins.lualine"
+spec("plugins.lualine")
 -- Comments
-spec "plugins.comment"
+spec("plugins.comment")
 -- Breadcrumbs
-spec "plugins.breadcrumbs"
+spec("plugins.breadcrumbs")
 -- Auto Pair
-spec "plugins.autopairs"
+spec("plugins.autopairs")
+--   Treesitter Autotag
+spec("plugins.ts-autotag")
 -- Indent line
-spec "plugins.indentline"
+spec("plugins.indentline")
 -- Telescope
-spec "plugins.telescope"
+spec("plugins.telescope")
 -- Project
-spec "plugins.project"
+spec("plugins.project")
 -- Git Signs
-spec "plugins.gitsigns"
+spec("plugins.gitsigns")
 -- Neogit
-spec "plugins.neogit"
+spec("plugins.neogit")
 -- Trouble.nvim
-spec "plugins.trouble"
+spec("plugins.trouble")
 -- Dashboard Screen
-spec "plugins.alpha"
+spec("plugins.alpha")
 
 -- Apply all plugins spec via lazy.nvim
-require "lazy_manager"
+require("lazy_manager")
