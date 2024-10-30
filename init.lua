@@ -48,6 +48,8 @@ spec("plugins.neogit")
 spec("plugins.trouble")
 -- Dashboard Screen
 spec("plugins.alpha")
+-- Toggle terminal
+spec("plugins.toggleterm")
 
 -- Apply all plugins spec via lazy.nvim
 require("lazy_manager")
