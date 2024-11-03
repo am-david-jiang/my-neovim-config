@@ -21,6 +21,7 @@ local servers = {
 	"cssls",
 	"html",
 	"ts_ls",
+	"tailwindcss",
 	"pyright",
 	"bashls",
 	"jsonls",
