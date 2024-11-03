@@ -7,7 +7,7 @@ local options = {
 	cmdheight = 1,
 	showmode = false,
 	pumheight = 10,
-  pumblend = 10,
+	pumblend = 10,
 	completeopt = { "menuone", "noselect" },
 	fileencoding = "utf-8",
 	conceallevel = 0,
@@ -39,6 +39,9 @@ local options = {
 	linebreak = true,
 	mouse = "a",
 	guifont = "FiraCode Nerd Font:h11",
+
+	showtabline = 2,
+	sessionoptions = "curdir,folds,globals,help,tabpages,terminal,winsize",
 }
 
 for k, v in pairs(options) do

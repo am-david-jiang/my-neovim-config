@@ -50,6 +50,8 @@ spec("plugins.trouble")
 spec("plugins.alpha")
 -- Toggle terminal
 spec("plugins.toggleterm")
+-- Tabby.nvim for tab bar
+spec("plugins.tabby")
 
 -- Apply all plugins spec via lazy.nvim
 require("lazy_manager")
