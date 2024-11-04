@@ -45,6 +45,10 @@ function M.config()
 	local icons = require("icons")
 	local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 
+	-- Load snippets
+	require("luasnip/loaders/from_vscode").lazy_load()
+	require("luasnip.loaders.from_snipmate").lazy_load()
+
 	vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
 	vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
 	vim.api.nvim_set_hl(0, "CmpItemKindEmoji", { fg = "#FDE030" })
