@@ -26,7 +26,6 @@ local servers = {
 	"bashls",
 	"jsonls",
 	"yamlls",
-	"cmake",
 	"clangd",
 	"rust_analyzer",
 	"svelte",
