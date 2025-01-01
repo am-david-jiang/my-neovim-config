@@ -52,6 +52,7 @@ local servers = {
 	-- Web development
 	"html",
 	"cssls",
+	"emmet_language_server",
 	"ts_ls",
 	"tailwindcss",
 	"svelte",
@@ -169,6 +170,7 @@ M.config = function()
 
 	-- Mason-lspconfig plugin setup
 	require("mason-lspconfig").setup({
+		automatic_installation = true,
 		ensure_installed = servers,
 	})
 end
