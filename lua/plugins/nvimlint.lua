@@ -15,7 +15,7 @@ local ESLINT_CONFIG_FILENAME = {
 	"eslint.config.cjs",
 }
 
-function isEslintConfigExisted()
+function is_eslint_config_existed()
 	for _, filename in ipairs(ESLINT_CONFIG_FILENAME) do
 		local configPath = vim.uv.cwd() .. "/" .. filename
 		if vim.uv.fs_stat(configPath) then
@@ -36,7 +36,7 @@ function M.config()
 	local frontend_lint_augroup = vim.api.nvim_create_augroup("frontend_lint", { clear = true })
 	local lint_group = vim.api.nvim_create_augroup("lint", { clear = true })
 
-	if isEslintConfigExisted() then
+	if is_eslint_config_existed() then
 		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
 			group = frontend_lint_augroup,
 			pattern = { "*.js", "*.ts", "*.jsx", "*.tsx", "*.svelte" },
