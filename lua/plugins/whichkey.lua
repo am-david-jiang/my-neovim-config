@@ -9,12 +9,6 @@ function M.config()
 	local mappings = {
 		{ "<leader>;", "<cmd>tabnew | terminal<CR>", desc = "Term" },
 		{ "<leader>T", group = "Treesitter" },
-		{ "<leader>a", group = "Tab" },
-		{ "<leader>aN", "<cmd>tabnew %<cr>", desc = "New Tab" },
-		{ "<leader>ah", "<cmd>-tabmove<cr>", desc = "Move Left" },
-		{ "<leader>al", "<cmd>+tabmove<cr>", desc = "Move Right" },
-		{ "<leader>an", "<cmd>$tabnew<cr>", desc = "New Empty Tab" },
-		{ "<leader>ao", "<cmd>tabonly<cr>", desc = "Only" },
 		{ "<leader>b", group = "Buffers" },
 		{ "<leader>d", group = "Debug" },
 		{ "<leader>f", group = "Find" },
@@ -28,7 +22,24 @@ function M.config()
 		{ "<leader>x", group = "Trouble.nvim" },
 	}
 
+	local tab_mappings = {
+		{ "<leader>t", group = "Tab" },
+		{ "<leader>tN", "<cmd>tabnew %<cr>", desc = "New Tab" },
+		{ "<leader>th", "<cmd>tabprevious<cr>", desc = "Previous Tab" },
+		{ "<leader>tl", "<cmd>tabnext<cr>", desc = "Next Tab" },
+		{ "<leader>tk", "<cmd>tabprevious<cr>", desc = "Previous Tab" },
+		{ "<leader>tj", "<cmd>tabnext<cr>", desc = "Next Tab" },
+		{ "<leader>ta", "<cmd>tabfirst<cr>", desc = "Go to First Tab" },
+		{ "<leader>te", "<cmd>tablast<cr>", desc = "Go to Last Tab" },
+		{ "<leader>tH", "<cmd>-tabmove<cr>", desc = "Move Tab Left" },
+		{ "<leader>tL", "<cmd>+tabmove<cr>", desc = "Move Tab Right" },
+		{ "<leader>tc", "<cmd>tabclose<cr>", desc = "Close Current Tab" },
+		{ "<leader>tn", "<cmd>$tabnew<cr>", desc = "New Empty Tab" },
+		{ "<leader>to", "<cmd>tabonly<cr>", desc = "Close Other Tabs" },
+	}
+
 	wk.add(mappings)
+	wk.add(tab_mappings)
 end
 
 return M

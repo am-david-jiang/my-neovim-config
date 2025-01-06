@@ -1,6 +1,7 @@
-require("launch")
 require("options")
 require("keymap")
+
+local spec = require("launch")
 
 -- Colorscheme
 spec("colorscheme")
