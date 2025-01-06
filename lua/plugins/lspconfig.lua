@@ -60,6 +60,7 @@ local servers = {
 	"yamlls",
 	-- Other languages
 	"jsonls",
+	"neocmake",
 }
 
 local function lsp_keymaps(bufnr)
