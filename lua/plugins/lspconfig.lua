@@ -61,6 +61,7 @@ local servers = {
 	-- Other languages
 	"jsonls",
 	"neocmake",
+	"sqlls",
 }
 
 local function lsp_keymaps(bufnr)

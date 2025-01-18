@@ -30,8 +30,12 @@ function M.config()
 			-- Markdown language for documentation
 			"markdown",
 			"markdown_inline",
+			-- Other
+			"sql",
 		},
 		auto_install = true,
+		sync_install = false,
+		ignore_install = {},
 		highlight = {
 			enable = true,
 			use_languagetree = true,
