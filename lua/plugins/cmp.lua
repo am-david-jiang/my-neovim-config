@@ -36,6 +36,9 @@ local M = {
 		{
 			"hrsh7th/cmp-nvim-lua",
 		},
+		{
+			"hrsh7th/cmp-nvim-lsp-signature-help",
+		},
 	},
 }
 
@@ -60,6 +63,7 @@ function M.config()
 			end,
 		},
 		formatting = {
+			expandable_indicator = true,
 			fields = { "abbr", "kind", "menu" },
 			format = function(entry, vim_item)
 				vim_item.kind = icons.kind[vim_item.kind]
@@ -137,6 +141,7 @@ function M.config()
 				name = "lazydev",
 				group_index = 0, -- set group index to 0 to skip loading LuaLS completions
 			},
+			{ name = "nvim_lsp_signature_help" },
 		},
 		confirm_opts = {
 			behavior = cmp.ConfirmBehavior.Replace,
