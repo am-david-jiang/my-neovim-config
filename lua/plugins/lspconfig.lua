@@ -44,6 +44,7 @@ local servers = {
 	-- Compiled languages
 	"clangd",
 	"rust_analyzer",
+	"gopls",
 	-- Dynamic languages
 	"lua_ls",
 	"pyright",
