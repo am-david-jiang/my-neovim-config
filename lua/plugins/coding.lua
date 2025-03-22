@@ -26,16 +26,19 @@ local M = {
   -- Mini.pairs configuration
   {
     "echasnovski/mini.pairs",
+    event = "InsertEnter",
     opts = {},
   },
   -- Mini.ai configuration
   {
     "echasnovski/mini.ai",
+    event = "InsertEnter",
     opts = {},
   },
   -- Nvim-ts-autotag configuration
   {
     "windwp/nvim-ts-autotag",
+    event = "InsertEnter",
     opts = {
       opts = {
         enable_close = true, -- Auto close tags
