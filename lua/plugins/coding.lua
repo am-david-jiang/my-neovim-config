@@ -23,6 +23,11 @@ local M = {
     event = "VeryLazy",
     enabled = vim.fn.has("nvim-0.10.0") == 1,
   },
+  -- Mini.pairs configuration
+  {
+    "echasnovski/mini.pairs",
+    opts = {},
+  },
 }
 
 return M
