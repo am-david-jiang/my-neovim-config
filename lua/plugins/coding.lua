@@ -1,4 +1,5 @@
 local treesitterUtils = require("utils.treesitter")
+local blink_config = require("utils.blink")
 
 ---@module "lazy"
 ---@type LazySpec[]
@@ -72,6 +73,32 @@ local M = {
         enable = true,
       },
     },
+  },
+  -- Completion configuration
+  {
+    "saghen/blink.cmp",
+    event = "InsertEnter",
+    dependencies = {
+      {
+        "L3MON4D3/LuaSnip",
+        event = "InsertEnter",
+        version = "v2.*",
+        build = "make install_jsregexp",
+        dependencies = {
+          "rafamadriz/friendly-snippets",
+        },
+      },
+    },
+    version = "1.*",
+    ---@module 'blink.cmp'
+    ---@type blink.cmp.Config
+    opts = blink_config,
+    opts_extend = { "sources.default" },
+    config = function(_, opts)
+      require("luasnip.loaders.from_vscode").lazy_load()
+
+      require("blink.cmp").setup(opts)
+    end,
   },
 }
 

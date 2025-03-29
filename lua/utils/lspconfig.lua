@@ -74,28 +74,38 @@ local on_attach = function(_, bufnr)
   lsp_keymaps(bufnr)
 end
 
-local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-
-capabilities.textDocument.completion.completionItem = {
-  documentationFormat = { "markdown", "plaintext" },
-  snippetSupport = true,
-  preselectSupport = true,
-  insertReplaceSupport = true,
-  labelDetailsSupport = true,
-  deprecatedSupport = true,
-  commitCharactersSupport = true,
-  tagSupport = { valueSet = { 1 } },
-  resolveSupport = {
-    properties = {
-      "documentation",
-      "detail",
-      "additionalTextEdits",
+local custom_capabilities = {
+  textDocument = {
+    completion = {
+      completionItem = {
+        documentationFormat = { "markdown", "plaintext" },
+        snippetSupport = true,
+        preselectSupport = true,
+        insertReplaceSupport = true,
+        labelDetailsSupport = true,
+        deprecatedSupport = true,
+        commitCharactersSupport = true,
+        tagSupport = { valueSet = { 1 } },
+        resolveSupport = {
+          properties = {
+            "documentation",
+            "detail",
+            "additionalTextEdits",
+          },
+        },
+      },
     },
   },
 }
 
 --- Lsp servers setup
-local function lsp_servers_setup(lspconfig)
+local function lsp_servers_setup()
+  -- Import nvim-lspconfig
+  local lspconfig = require("lspconfig")
+  local blink = require("blink.cmp")
+
+  local capabilities = blink.get_lsp_capabilities(custom_capabilities)
+
   for _, server in pairs(servers) do
     local opts = {
       on_attach = on_attach,
@@ -113,12 +123,9 @@ end
 
 -- Lspconfig plugin config function
 local config = function()
-  -- Import nvim-lspconfig
-  local lspconfig = require("lspconfig")
-
   lsp_diagnostic_config()
 
-  lsp_servers_setup(lspconfig)
+  lsp_servers_setup()
 
   -- Mason-lspconfig plugin setup
   local require_ok, mason = pcall(require, "mason-lspconfig")
