@@ -1,3 +1,5 @@
+local treesitterUtils = require("utils.treesitter")
+
 ---@module "lazy"
 ---@type LazySpec[]
 local M = {
@@ -49,6 +51,25 @@ local M = {
         ["html"] = {
           enable_close = false,
         },
+      },
+    },
+  },
+  -- Treesitter configuration
+  {
+    "nvim-treesitter/nvim-treesitter",
+    event = { "BufReadPost", "BufNewFile" },
+    build = ":TSUpdate",
+    opts = {
+      ensure_installed = treesitterUtils.installed,
+      auto_install = true,
+      sync_install = false,
+      ignore_install = {},
+      highlight = {
+        enable = true,
+        use_languagetree = true,
+      },
+      indent = {
+        enable = true,
       },
     },
   },
