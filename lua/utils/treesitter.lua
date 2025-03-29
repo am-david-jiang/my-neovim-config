@@ -1,6 +1,4 @@
-local M = {}
-
-M.installed = {
+local installed = {
   -- Compiled languages
   "c",
   "cpp",
@@ -27,5 +25,26 @@ M.installed = {
   -- Other
   "sql",
 }
+
+---@module "nvim-treesitter.configs"
+---@type TSConfig
+local opts = {
+  modules = {},
+  ensure_installed = installed,
+  auto_install = true,
+  sync_install = false,
+  ignore_install = {},
+  highlight = {
+    enable = true,
+    use_languagetree = true,
+  },
+  indent = {
+    enable = true,
+  },
+}
+
+local M = function()
+  require("nvim-treesitter.configs").setup(opts)
+end
 
 return M

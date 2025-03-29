@@ -1,5 +1,8 @@
-local treesitterUtils = require("utils.treesitter")
+local treesitter_config = require("utils.treesitter")
 local blink_config = require("utils.blink")
+local linting_config = require("utils.linting")
+local formatting_config = require("utils.formatting")
+local diagnostics_utils = require("utils.diagnostics")
 
 ---@module "lazy"
 ---@type LazySpec[]
@@ -60,19 +63,7 @@ local M = {
     "nvim-treesitter/nvim-treesitter",
     event = { "BufReadPost", "BufNewFile" },
     build = ":TSUpdate",
-    opts = {
-      ensure_installed = treesitterUtils.installed,
-      auto_install = true,
-      sync_install = false,
-      ignore_install = {},
-      highlight = {
-        enable = true,
-        use_languagetree = true,
-      },
-      indent = {
-        enable = true,
-      },
-    },
+    config = treesitter_config,
   },
   -- Completion configuration
   {
@@ -99,6 +90,27 @@ local M = {
 
       require("blink.cmp").setup(opts)
     end,
+  },
+  -- Linting configuration
+  {
+    "mfussenegger/nvim-lint",
+    event = {
+      "BufReadPre",
+      "BufNewFile",
+    },
+    config = linting_config,
+  },
+  -- Formatting configuration
+  {
+    "stevearc/conform.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    opts = formatting_config,
+  },
+  -- Diagonostics configuration
+  {
+    "folke/trouble.nvim",
+    cmd = "Trouble",
+    keys = diagnostics_utils.keys,
   },
 }
 
